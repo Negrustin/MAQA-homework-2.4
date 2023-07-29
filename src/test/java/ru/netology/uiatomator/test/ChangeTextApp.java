@@ -52,7 +52,7 @@ public class SampleTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.seвtTextToTextInput(text);
+        mainPage.setTextToTextInput(text);
         mainPage.clickToChangeButton();
 
         String expected = text;
@@ -69,10 +69,10 @@ public class SampleTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.seвtTextToTextInput(firstText);
+        mainPage.setTextToTextInput(firstText);
         mainPage.clickToChangeButton();
 
-        mainPage.seвtTextToTextInput(emptyString);
+        mainPage.setTextToTextInput(emptyString);
         mainPage.clickToChangeButton();
 
 
@@ -90,7 +90,7 @@ public class SampleTest {
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.seвtTextToTextInput(firstText);
+        mainPage.setTextToTextInput(firstText);
         mainPage.clickToActivityButton();
 
         ActivityPage activityPage = new ActivityPage(driver);
