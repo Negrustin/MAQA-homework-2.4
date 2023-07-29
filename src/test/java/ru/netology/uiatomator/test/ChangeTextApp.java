@@ -17,7 +17,7 @@ import static io.appium.java_client.remote.MobileCapabilityType.DEVICE_NAME;
 import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
 
 //@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class SampleTest {
+public class ChangeTextApp {
 
 
     enum Platforms {Android, iOS}
@@ -47,12 +47,12 @@ public class SampleTest {
     }
 
     @Test
-    public void sampleTest() {
+    public void testSendAndReceiveText() {
         String text = "Hello World";
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.setTextToTextInput(text);
+        mainPage.sendValueToInput(text);
         mainPage.clickToChangeButton();
 
         String expected = text;
@@ -63,16 +63,16 @@ public class SampleTest {
     }
 
     @Test
-    public void myTest2 () {
+    public void testEmptyInputDoesNotChangeValue () {
         String firstText = "Hello world!";
         String emptyString = "";
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.setTextToTextInput(firstText);
+        mainPage.sendValueToInput(firstText);
         mainPage.clickToChangeButton();
 
-        mainPage.setTextToTextInput(emptyString);
+        mainPage.sendValueToInput(emptyString);
         mainPage.clickToChangeButton();
 
 
@@ -85,12 +85,12 @@ public class SampleTest {
     }
 
     @Test
-    public void myTest3 () {
+    public void testTextDisplayedOnNewPage () {
         String firstText = "New activity text";
 
         MainPage mainPage = new MainPage(driver);
 
-        mainPage.setTextToTextInput(firstText);
+        mainPage.sendValueToInput(firstText);
         mainPage.clickToActivityButton();
 
         ActivityPage activityPage = new ActivityPage(driver);
@@ -104,9 +104,6 @@ public class SampleTest {
 
 
     }
-
-
-
 
     @AfterEach
     public void tearDown() {

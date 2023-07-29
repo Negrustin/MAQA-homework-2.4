@@ -37,7 +37,7 @@ public class MainPage {
     private WebElement activityButton;
 
 
-public void seвtTextToTextInput(String text) {
+public void sendValueToInput(String text) {
     textInput.isDisplayed();
     textInput.sendKeys(text);
 
